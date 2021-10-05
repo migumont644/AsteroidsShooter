@@ -20,10 +20,7 @@ namespace AsteroidsShooter
             speed = _speed;
             brushColour = _brushcolor;
         }
-        public void Move()
-        {
-            y += speed;
-        }
+
 
         public void Move(string direction)
         {
@@ -37,12 +34,27 @@ namespace AsteroidsShooter
             }
             else if (direction == "up")
             {
-                y += speed;
+                y -= speed;
             }
             else if (direction == "down")
             {
-                y -= speed;
+                y += speed;
             }
+        }
+        public bool Collision(Asteroids a)
+        {
+            Rectangle thisRec = new Rectangle(x, y, size, size);
+            Rectangle asteroidRec = new Rectangle(a.x, a.y, a.size, a.size);
+
+            if (thisRec.IntersectsWith(asteroidRec))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
