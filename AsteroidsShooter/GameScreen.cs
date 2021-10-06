@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace AsteroidsShooter
 {
@@ -17,15 +18,18 @@ namespace AsteroidsShooter
         List<Asteroids> asteroids = new List<Asteroids>();
 
         int newAsteroidsCounter = 0;
-        int asteroidBigger = 0;
 
         Random randGen = new Random();
       
         Asteroids hero;
 
+        SoundPlayer appearSound = new SoundPlayer(Properties.Resources.meteor_whoosh);
+        SoundPlayer boomSound = new SoundPlayer(Properties.Resources.explosion_hit);
+        SoundPlayer gameOverSound = new SoundPlayer(Properties.Resources.sad_game_over);
 
         SolidBrush redBrush = new SolidBrush(Color.Red);
         SolidBrush brownBrush = new SolidBrush(Color.Brown);
+
         public GameScreen()
         {
             InitializeComponent();
@@ -34,16 +38,14 @@ namespace AsteroidsShooter
 
         public void OnStart()
         {
+            appearSound.Play();
+            CreateAsteroids();
 
-        asteroidBigger = 0;
-        CreateAsteroids();
-
-            hero = new Asteroids(this.Width / 2 - 100, this.Height - 100, 20, 13, redBrush);
+            hero = new Asteroids(this.Width / 2 - 100, this.Height - 100, 25, 15, redBrush);
         }
 
         public void CreateAsteroids()
         {
-            asteroidBigger = 0;
             int randomLocationX = randGen.Next(0, this.Width);
             int randomLocationY = randGen.Next(0, this.Height);
             Asteroids a = new Asteroids(randomLocationX, randomLocationY, 40, 0, brownBrush);
@@ -95,7 +97,7 @@ namespace AsteroidsShooter
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             newAsteroidsCounter++;
-            asteroidBigger++;
+          //  asteroidBigger++;
 
             //move hero
             if (leftArrowDown)
@@ -118,37 +120,38 @@ namespace AsteroidsShooter
             {
                 if (hero.Collision(a) && spaceDown)
                 {
+                    
+                    Form1.score++;
+                    scoreLabel.Text = $"Score: {Form1.score}";
                     asteroids.Remove(a);
-                    break;                   
+                    boomSound.Play();
+                    break;
+                    
                 }
             }
-
-             
-
-
-
-            if (asteroidBigger == 150)
+           
+            if (newAsteroidsCounter == 90)
             {
-                foreach (Asteroids a in asteroids)
+                appearSound.Play();
+                CreateAsteroids();
+                newAsteroidsCounter = 0;
+            }
+
+            foreach (Asteroids a in asteroids)
+            {
+                a.size += 2;
+                a.x -= 1;
+                a.y -= 1;
+                if (a.size == 250)
                 {
-                    a.size += 40;
-                }
+                    gameOverSound.Play();
+                    Form f = this.FindForm();
+                    f.Controls.Remove(this);
 
-            }
-            if (asteroidBigger == 250)
-            {
-                foreach (Asteroids a in asteroids)
-                {
-                    a.size += 40;
+                    GameOverScreen gos = new GameOverScreen();
+                    f.Controls.Add(gos);
+                    gos.Focus();
                 }
-            }
-            if (asteroidBigger == 350)
-            {
-                Form f = this.FindForm();
-                f.Controls.Remove(this);
-
-                GameOverScreen gos = new GameOverScreen();
-                f.Controls.Add(gos);
             }
 
             Refresh();

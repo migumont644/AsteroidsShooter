@@ -12,6 +12,7 @@ namespace AsteroidsShooter
 {
     public partial class Form1 : Form
     {
+       public static int score = 0;
         public Form1()
         {
             InitializeComponent();

@@ -93,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +107,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-meteor-whoosh-3024.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-short-explosion-1694.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-explosion-hit-1704.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-sad-game-over-trombone-471.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms-alert-5-daniel_simon.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
