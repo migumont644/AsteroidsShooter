@@ -79,6 +79,7 @@ namespace AsteroidsShooter
             this.Controls.Add(this.gameOverLabel);
             this.Name = "GameOverScreen";
             this.Size = new System.Drawing.Size(2050, 1065);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameOverScreen_PreviewKeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

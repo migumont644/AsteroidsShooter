@@ -17,13 +17,16 @@ namespace AsteroidsShooter
         public GameOverScreen()
         {
             InitializeComponent();
+            scoreTwoLabel.Text = $"Score: {Form1.score}";
         }
 
-        private void MenuScreen_KeyDown(object sender, KeyEventArgs e)
+        private void GameOverScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
             {
+                //When returning to the menu, be sure to click your mouse once. 
                 case Keys.Space:
+                    Form1.score = 0;
                     startOverSound.Play();
                     Form f = this.FindForm();
                     f.Controls.Remove(this);
@@ -36,7 +39,6 @@ namespace AsteroidsShooter
                     Application.Exit();
                     break;
             }
-            scoreTwoLabel.Text = $"Score: {Form1.score}";
         }
     }
 }

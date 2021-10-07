@@ -126,7 +126,7 @@
         AAEAAAD/////AQAAAAAAAAAEAQAAABZTeXN0ZW0uSU8uTWVtb3J5U3RyZWFtCgAAAAdfYnVmZmVyB19v
         cmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBhbmRhYmxlCV93cml0YWJsZQpfZXhw
         b3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRlbnRpdHkHAAAAAAAAAAACAggICAgB
-        AQEBCQIAAAAAAAAAAAAAAMK3IQDCtyEAAAEAAQoPAgAAAMK3IQACUklGRrq3IQBXQVZFZm10ICgAAAD+
+        AQEBCQIAAAAAAAAAwrchAMK3IQDCtyEAAAEAAQoPAgAAAMK3IQACUklGRrq3IQBXQVZFZm10ICgAAAD+
         /wIARKwAAJgJBAAGABgAFgAYAAMAAAABAAAAAAAQAIAAAKoAOJtxZmFjdAQAAACTngUAZGF0YXK3IQAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -36957,6 +36957,9 @@
         //////////////////////////////8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8AAAD///8A
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL
 </value>
+  </data>
+  <data name="explosion_hit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mixkit-explosion-hit-1704 (1).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="meteor_whoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mixkit-meteor-whoosh-3024.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

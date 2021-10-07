@@ -81,6 +81,15 @@ namespace AsteroidsShooter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream explosion_hit2 {
+            get {
+                return ResourceManager.GetStream("explosion_hit2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream meteor_whoosh {
             get {
                 return ResourceManager.GetStream("meteor_whoosh", resourceCulture);

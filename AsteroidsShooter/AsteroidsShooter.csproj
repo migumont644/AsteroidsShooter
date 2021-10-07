@@ -123,5 +123,8 @@
   <ItemGroup>
     <None Include="Resources\sms-alert-5-daniel_simon.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-explosion-hit-1704 %281%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

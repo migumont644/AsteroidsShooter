@@ -24,7 +24,7 @@ namespace AsteroidsShooter
         Asteroids hero;
 
         SoundPlayer appearSound = new SoundPlayer(Properties.Resources.meteor_whoosh);
-        SoundPlayer boomSound = new SoundPlayer(Properties.Resources.explosion_hit);
+        SoundPlayer boomSound = new SoundPlayer(Properties.Resources.explosion_hit2);
         SoundPlayer gameOverSound = new SoundPlayer(Properties.Resources.sad_game_over);
 
         SolidBrush redBrush = new SolidBrush(Color.Red);
@@ -151,6 +151,7 @@ namespace AsteroidsShooter
                     GameOverScreen gos = new GameOverScreen();
                     f.Controls.Add(gos);
                     gos.Focus();
+                    gameTimer.Enabled = false;
                 }
             }
 
